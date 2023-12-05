@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Emsi MAARIF/ROUDANI';
+ actions : Array<any> = [
+   {title : "Home", "route" : "/home", icon : "house"},
+   {title : "Products", "route" : "/products", icon : "search"},
+   {title : "NewProduct", "route" : "/newProduct", icon : "safe"},
+ ];
+ currentAction : any ;
+
+  setCurrentAction(action: any) {
+    this.currentAction = action;
+
+  }
 }
