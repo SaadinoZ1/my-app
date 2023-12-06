@@ -10,9 +10,9 @@ import {product} from "../model/product.model";
 export class ProductService {
 
   constructor(private  http: HttpClient) { }
-  public getProducts(page : number=1, size :number=4) : Observable<Array<product>>{
-    return this.http.get<Array<product>>
-    (`http://localhost:8089/products?_page=${page}&_limit=${size}`);
+  public searchProducts( keyword:string="",page : number=1, size :number=4) {
+    return this.http.get
+    (`http://localhost:8089/products?name_like=${keyword}&_page=${page}&_limit=${size}`, {observe:'response'});
   }
   public checkProduct(product: product):Observable <product>
     {
@@ -26,7 +26,14 @@ export class ProductService {
   saveProduct(product: product) :Observable<product> {
     return this.http.post<product>(`http://localhost:8089/products/` , product);
   }
-  public searchProducts(keyword:string) : Observable<Array<product>>{
-    return this.http.get<Array<product>>(`http://localhost:8089/products?name_like=${keyword}`);
+
+  getProductById(productId: number) : Observable<product> {
+   return  this.http.get<product>(`http://localhost:8089/products/${productId}`);
+
+  }
+
+  updateProduct(product: product): Observable<product> {
+    return  this.http.put<product>(`http://localhost:8089/products/${product.id}`,product);
+
   }
 }

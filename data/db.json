@@ -35,6 +35,30 @@
       "price": "2000",
       "checked": true,
       "id": 6
+    },
+    {
+      "name": "Air Fryer",
+      "price": "3000",
+      "checked": true,
+      "id": 7
+    },
+    {
+      "name": "Bouilloire",
+      "price": "500",
+      "checked": true,
+      "id": 8
+    },
+    {
+      "name": "Machine à cafè",
+      "price": "1500",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "name": "mixeur",
+      "price": "600",
+      "checked": true,
+      "id": 10
     }
   ]
 }
