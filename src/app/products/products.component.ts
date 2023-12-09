@@ -91,6 +91,6 @@ export class ProductsComponent  implements  OnInit {
   }
 
   handleUpdate(product: product) {
-    this.router.navigateByUrl(`/updateProduct/${product.id}`)
+    this.router.navigateByUrl(`/admin/updateProduct/${product.id}`)
   }
 }
